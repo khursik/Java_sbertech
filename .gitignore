@@ -2,12 +2,12 @@
 .gradle
 /build/
 
-src
+#src
 
-build.gradle
-gradlew
-gradlew.bat
-settings.gradle
+#uild.gradle
+#gradlew
+#gradlew.bat
+#settings.gradle
 
 # Ignore Gradle GUI config
 gradle-app.setting
