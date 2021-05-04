@@ -1,5 +1,7 @@
 package ru.sbt.reflection;
 
+import java.util.Objects;
+
 public class Car {
     private final int carId;
     private final String brand;
@@ -39,6 +41,19 @@ public class Car {
 
     public int getOwnerId() {
         return ownerId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Car)) return false;
+        Car car = (Car) o;
+        return getCarId() == car.getCarId() && getMaxVelocity() == car.getMaxVelocity() && getPower() == car.getPower() && getOwnerId() == car.getOwnerId() && getBrand().equals(car.getBrand()) && getModelName().equals(car.getModelName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getCarId(), getBrand(), getModelName(), getMaxVelocity(), getPower(), getOwnerId());
     }
 
 
